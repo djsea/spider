@@ -1,4 +1,7 @@
 '''
+任务要求和内容跟v5一样
+本案例只是利用Request来实现v5的内容
+
 利用parse模块模拟post请求
 分析百度词典
 分析步骤:
@@ -41,7 +44,11 @@ headers = {
     'Content-Length': len(data)
 }
 
-rsp = request.urlopen(baseurl, data=data)
+# 构造一个Request的实例
+
+req = request.Request(url=baseurl,data=data, headers=headers)
+
+rsp = request.urlopen(req)
 
 json_data = rsp.read().decode('utf-8')
 print(type(json_data))
@@ -55,6 +62,4 @@ print(json_data)
 
 for item in json_data['data']:
     print(item['k'], '--', item['v'])
-
-
 
