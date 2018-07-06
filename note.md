@@ -47,3 +47,24 @@
                       conda install chardet
     - 案例v2
     
+- urlopen的返回对象
+    - 案例v3
+    - geturl:返回请求对象的url
+    - info:请求反馈对象的meta信息
+    - getcode:返回的http code
+
+- request.data的使用
+    - 访问网络的两种方法
+        - get
+            - 利用参数给服务器传递消息
+            - 参数为dict,然后使用parse编码
+        - post
+            - 一般向服务器传递参数使用
+            - post是把信息自动加密处理
+            - 我们如果想使用post信息,需要利用到data参数
+            - 使用post,意味着http的请求头可能需要更改
+                - content-type:application/x-www.form-urlencode
+                - content-length:数据长度
+                - 简而言之,一旦更改请求方法,请注意其他请求头部信息相适应
+            - urllib.parse.urlencode可以将字符串自动转换成上面的
+            - 案例 v4/v5

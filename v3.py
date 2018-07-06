@@ -20,5 +20,8 @@ if __name__ == '__main__':
 
     print(type(rsp))
     print(rsp)
+    print("URL : {0}", format(rsp.geturl()))
+    print("Info: {0}", format(rsp.info()))
+    print("Code: {0}", format(rsp.getcode()))
 
     html = rsp.read()
