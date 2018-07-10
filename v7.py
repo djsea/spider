@@ -1,6 +1,11 @@
-'''
-URLError的使用
-'''
+"""
+
+
+    URLError的使用
+
+
+"""
+
 # import urllib
 from urllib import request, error
 
@@ -11,12 +16,12 @@ if __name__ == '__main__':
     try:
 
         req = request.Request(url)
-        print("req=",type(req))
+        print("req=", type(req))
 
         rsp = request.urlopen(req)
-        print("rsp=",type(rsp))
+        print("rsp=", type(rsp))
         html = rsp.read().decode()
-        print("html=",type(html))
+        print("html=", type(html))
         print(html)
 
     except error.URLError as e:
